@@ -360,15 +360,15 @@ class BotAI(DistanceCalculation):
                 )
             )
             # Choose best fitting point
-            result: Point2 = min(
-                possible_points, key=lambda point: sum(point.distance_to(resource) for resource in resources)
-            )
-            centers[result] = resources
-            # Put all expansion locations in a list
-            self._expansion_positions_list.append(result)
-            # Maps all resource positions to the expansion position
-            for resource in resources:
-                self._resource_location_to_expansion_position_dict[resource.position] = result
+           # result: Point2 = min(
+           #     possible_points, key=lambda point: sum(point.distance_to(resource) for resource in resources)
+           # )
+           # centers[result] = resources
+           # # Put all expansion locations in a list
+           # self._expansion_positions_list.append(result)
+           # # Maps all resource positions to the expansion position
+           # for resource in resources:
+           #     self._resource_location_to_expansion_position_dict[resource.position] = result
 
     @property
     def units_created(self) -> Counter:
