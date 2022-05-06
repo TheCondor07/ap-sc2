@@ -1,7 +1,5 @@
 from typing import Callable, FrozenSet, List, Set
 
-import numpy as np
-
 from sc2.position import Point2
 
 
@@ -21,12 +19,7 @@ class PixelMap:
         assert self.width * self.height == (8 if in_bits else 1) * len(
             self._proto.data
         ), f"{self.width * self.height} {(8 if in_bits else 1)*len(self._proto.data)}"
-        buffer_data = np.frombuffer(self._proto.data, dtype=np.uint8)
-        if in_bits:
-            buffer_data = np.unpackbits(buffer_data)
-        self.data_numpy = buffer_data.reshape(self._proto.size.y, self._proto.size.x)
-        if mirrored:
-            self.data_numpy = np.flipud(self.data_numpy)
+
 
     @property
     def width(self):

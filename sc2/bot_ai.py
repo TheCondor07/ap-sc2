@@ -1635,7 +1635,6 @@ class BotAI(DistanceCalculation):
             self._game_info.player_start_location = self.townhalls.first.position
             # Calculate and cache expansion locations forever inside 'self._cache_expansion_locations', this is done to prevent a bug when this is run and cached later in the game
             _ = self._find_expansion_locations()
-        self._game_info.map_ramps, self._game_info.vision_blockers = self._game_info._find_ramps_and_vision_blockers()
         self._time_before_step: float = time.perf_counter()
 
     def _prepare_step(self, state, proto_game_info):
