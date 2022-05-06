@@ -5,8 +5,6 @@ import warnings
 from itertools import chain
 from typing import TYPE_CHECKING, Any, Dict, Generator, List, Optional, Set, Tuple, Union
 
-import numpy as np
-
 from sc2.ids.unit_typeid import UnitTypeId
 from sc2.position import Point2, Point3
 from sc2.unit import Unit
